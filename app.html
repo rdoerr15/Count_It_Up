@@ -93,9 +93,70 @@
     </header>
 
     <main class="container mt-3">
-      <h1>App UI Goes Here</h1>
-      <input type="text" placeholder="Enter a Message" id="message" />
-      <button class="btn btn-primary" id="btnSubmit">Display Message</button>
+      <div class="row row-cols-1 row-cols-md-2">
+        <div class="col">
+          <h1>Hundo:</h1>
+          <h1>A Coding Challenge</h1>
+          <h4>
+            Live life one loop at a time! Hundo is a JavaScript coding exercise
+            using loops. Write a program that displays the numbers 0 to 100.
+            Then, display the even numbers in <strong>BOLD</strong>.
+          </h4>
+          <hr />
+          <h2>Instructions</h2>
+          <p>
+            Enter a starting value and an ending value. Press the button, and
+            the values will appear on the page with the even numbers in <strong>bold</strong>.
+          </p>
+        </div>
+        <div class="col">
+          <form action="#">
+            <h5>Enter Values</h5>
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="startValue" class="form-label"
+                  >Starting Number</label
+                >
+                <input
+                  class="form-control"
+                  type="number"
+                  name="startValue"
+                  id="startValue"
+                  placeholder="Starting Number"
+                  aria-label="Starting Number"
+                  value="0"
+                />
+              </div>
+              <div class="col-md-6">
+                  <label for="endValue" class="form-label"
+                  >Ending Number</label>
+                  <input
+                  class="form-control"
+                  type="number"
+                  name="endValue"
+                  id="endValue"
+                  placeholder="Ending Number"
+                  aria-label="Ending Number"
+                  value="100"/>
+              </div>
+              <div class="col-12 text-end">
+                  <button id="btnSubmit" class="btn btn-primary" type="button">
+                      Display the Hundo
+                  </button>
+              </div>
+            </div>
+            <hr>
+            <h2 class="mt-3">Results</h2>
+            <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody id="results">
+                      <!--js results go here-->
+                    </tbody>
+                </table>
+            </div>
+          </form>
+        </div>
+      </div>
     </main>
 
     <footer class="mt-3">
@@ -143,6 +204,6 @@
   <script>
     document
       .getElementById("btnSubmit")
-      .addEventListener("click", displayMessage);
+      .addEventListener("click", getValues);
   </script>
 </html>
