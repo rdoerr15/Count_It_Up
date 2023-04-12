@@ -7,8 +7,17 @@ function getValues() {
     let startNumber = parseInt(startValue); //startNumber = 0
     let endNumber = parseInt(endValue); //endNumber = 100
 
-    let numberArray = generateNumbers(startNumber, endNumber);
-    displayNumbers(numberArray);
+    if (Number.isInteger(startNumber) && Number.isInteger(endNumber)) {
+        let numberArray = generateNumbers(startNumber, endNumber);
+        displayNumbers(numberArray);
+    } else {
+        //display an error
+        Swal.fire ({
+                icon: 'error',
+                title: 'Oops!',
+                text: 'Please enter valid numbers for the start and end values'
+            });
+    }
 }
 
 //generate the range of numbers to display
@@ -34,10 +43,9 @@ function displayNumbers(numbers) { //length is amount of numbers/content in an a
         let currentNumber = numbers[index];
 
         if (currentNumber % 2 == 0) {
-            results += `&lt;tr>&lt;td class="evenNumber"> ${currentNumber} &lt;/td>&lt;/tr>`;
+            results += `<tr><td class="evenNumber">${currentNumber}</td></tr>`;
         } else {
-            results =
-              results + `&lt;tr>&lt;td> ${currentNumber} &lt;/td>&lt;/tr>`;
+            results = results + `<tr><td>${currentNumber}</td></tr>`;
         }
     }    
     let tableBody = document.getElementById('results');
