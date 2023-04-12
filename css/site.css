@@ -69,7 +69,12 @@ footer {
 }
 
 .appLogo {
-    max-width: 400px;
+    max-width: 600px;
+}
+
+.evenNumber {
+    font-weight: bolder;
+    color: var(--rd-oceangreen-color) !important;
 }
 
 /* start navbar */

@@ -25,17 +25,21 @@ function generateNumbers(start, end) {
 
 //placing the generated numbers on the page AND bolding the even numbers
 //view function
-function displayNumbers(numbers) { //length is amount of number/content in an array
+function displayNumbers(numbers) { //length is amount of numbers/content in an array
 
     let results = '';
 
-    for (let index = 0; index < numbers.length; index = index + 1) {
+    for (let index = 0; index < numbers.length; index++) {   //index++ is same as index = index + 1
       //start at 0... as long as number < 101...keep looping, then add 1
         let currentNumber = numbers[index];
 
-        results += `<tr><td>${currentNumber}</td></tr>`;
-    }
-
+        if (currentNumber % 2 == 0) {
+            results += `&lt;tr>&lt;td class="evenNumber"> ${currentNumber} &lt;/td>&lt;/tr>`;
+        } else {
+            results =
+              results + `&lt;tr>&lt;td> ${currentNumber} &lt;/td>&lt;/tr>`;
+        }
+    }    
     let tableBody = document.getElementById('results');
     tableBody.innerHTML = results;
 }
