@@ -12,7 +12,7 @@
     --rd-dark-color: #274472; 
     --rd-light-color: #deeefb;
     --rd-background-color: #A3C9D9;
-    --rd-oceangreen-color: #039485; 
+    --rd-oceangreen-color: #39A7A5; 
     --rd-sand-color: #C9B48B;
     
     /* navbar colors */
@@ -70,6 +70,19 @@ footer {
 
 .appLogo {
     max-width: 600px;
+}
+
+.btn-primary {
+    --bs-btn-bg: var(--rd-oceangreen-color);
+    --bs-btn-border-color: var(--rd-secondary-color);
+    --bs-btn-hover-bg: var(--rd-sand-color);
+    --bs-btn-hover-border-color: var(--rd-secondary-color);
+    --bs-btn-hover-color: var(--rd-dark-color);
+    transition: all .5s
+}
+
+.navLogo {
+    border-radius: 5px;
 }
 
 .evenNumber {

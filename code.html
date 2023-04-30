@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hundo: A Coding Challenge</title>
+    <title>Count It Up!</title>
 
     <!--bootsrap css-->
     <link
@@ -38,7 +38,7 @@
     <link rel="stylesheet" href="/css/site.css" />
 
     <!--favicon-->
-    <link rel="shortcut icon" href="/img/logoLightBG.jpg" type="image/x-icon" />
+    <link rel="shortcut icon" href="/img/CountItUpFavicon.png" type="image/x-icon" />
   </head>
 
   <body data-bs-spy="scroll" data-bs-target="#mainNav">
@@ -46,8 +46,8 @@
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="/img/logoDarkBG.jpg" height="50" />
-            Hundo
+            <img src="/img/CountItUpNavLogo.png" height="50" />
+            Count It Up!
           </a>
           <button
             class="navbar-toggler"
@@ -106,39 +106,33 @@
         <div class="col-12 col-lg-8">
           <pre class="line-numbers">
                     <code class="language-js">
-//get the start and end numbers from the input
-//entry point AKA controller function
 function getValues() {
-    let startValue = document.getElementById('startValue').value; //startValue = "0"
-    let endValue = document.getElementById('endValue').value; //endValue = "100"
+    let startValue = document.getElementById('startValue').value; 
+    let endValue = document.getElementById('endValue').value; 
 
-    let startNumber = parseInt(startValue); //startNumber = 0
-    let endNumber = parseInt(endValue); //endNumber = 100
+    let startNumber = parseInt(startValue); 
+    let endNumber = parseInt(endValue); 
 
     let numberArray = generateNumbers(startNumber, endNumber);
     displayNumbers(numberArray);
 }
 
-//generate the range of numbers to display
-//business/logic function
 function generateNumbers(start, end) {
     let basketOfNumbers = [];
-  //starts at 0, keeps doing loop until its greater than 100
+  
     for (let number = start; number <= end; number = number + 1) {
-        basketOfNumbers.push(number);       //or number++
+        basketOfNumbers.push(number);       
     }
 
-    return basketOfNumbers; // => [0, 1, 2, 3, .... , 100]
+    return basketOfNumbers; 
 }
 
-//placing the generated numbers on the page AND bolding the even numbers
-//view function
-function displayNumbers(numbers) { //length is amount of numbers/content in an array
+function displayNumbers(numbers) { 
 
     let results = '';
 
-    for (let index = 0; index < numbers.length; index++) {   //index++ is same as index = index + 1
-      //start at 0... as long as number < 101...keep looping, then add 1
+    for (let index = 0; index < numbers.length; index++) {   
+      
         let currentNumber = numbers[index];
 
         if (currentNumber % 2 == 0) {
@@ -168,16 +162,15 @@ function displayNumbers(numbers) { //length is amount of numbers/content in an a
           </p>
           <h5>generateNumbers</h5>
           <p>
-            Next, this function uses a "for" loop to produce the numbers in our
+            This function uses a for loop to produce the numbers in our
             array. We then return these numbers back to the getValues function
             so they can be utilized.
           </p>
           <h5>displayMessage</h5>
           <p>
             Lastly, this function will actually genrate our results and place
-            them on the web page. We use another "for" loop to tie back the
-            numbers to the getValues function, along with an if,else statement
-            to bold the even numbers in the table.
+            them on the web page. We use another for loop, along with an if else statement
+            to display a table with even numbers bolded.
           </p>
         </div>
       </div>
