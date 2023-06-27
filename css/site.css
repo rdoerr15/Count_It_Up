@@ -59,7 +59,7 @@ footer {
     list-style-type: none;
 }
 .checklist>li i {
-    color:var(--rd-oceangreen-color);
+    color:var(--rd-dark-color);
     padding-right: .5rem;
 }
 
@@ -73,7 +73,7 @@ footer {
 }
 
 .btn-primary {
-    --bs-btn-bg: var(--rd-oceangreen-color);
+    --bs-btn-bg: var(--rd-dark-color);
     --bs-btn-border-color: var(--rd-secondary-color);
     --bs-btn-hover-bg: var(--rd-sand-color);
     --bs-btn-hover-border-color: var(--rd-secondary-color);

@@ -46,7 +46,7 @@
       <nav class="navbar navbar-expand-lg navbar-dark" id="mainNav">
         <div class="container">
           <a class="navbar-brand" href="/index.html">
-            <img src="/img/CountItUpNavLogo.png" height="50" />
+            <img src="/img/CountItUpNavLogo.png" class="navLogo" height="50" />
             Count It Up!
           </a>
           <button
@@ -153,24 +153,33 @@ function displayNumbers(numbers) {
             This code is structured with three functions. Below you can get a
             better understanding of how this code works.
           </p>
-          <h5>getValues</h5>
+          <hr>
+          <h5>getValues( )</h5>
           <p>
-            First of all, we needed to change the values from a string of text
-            to an integer. Assigning start and end numbers to parseInt allowed
-            us to do that. We then assign a number array to the generateNumbers
-            function
+            This function retrieves the values of the startValue and endValue elements from the HTML document. 
+            It then converts these values to integers using parseInt( ) and stores them in the variables startNumber and endNumber. 
+            Next, it calls the generateNumbers(startNumber, endNumber) function and passes the start and end numbers as arguments. 
+            Finally, it calls the displayNumbers(numberArray) function and passes the generated numbers as an argument.
           </p>
-          <h5>generateNumbers</h5>
+          <hr>
+          <h5>generateNumbers(start, end)</h5>
           <p>
-            This function uses a for loop to produce the numbers in our
-            array. We then return these numbers back to the function
-            so they can be utilized in the entry point function getValues.
+            This function takes two parameters, start and end, representing the range of numbers to generate. 
+            It initializes an empty array called basketOfNumbers. 
+            Then, it uses a for loop to iterate from the start number to the end number (inclusive). 
+            In each iteration, it adds the current number to the basketOfNumbers array using the push() method. 
+            After iterating through the range, it returns the array containing the generated numbers.
           </p>
-          <h5>displayMessage</h5>
+          <hr>
+          <h5>displayNumbers(numbers)</h5>
           <p>
-            Lastly, this function will actually genrate our results and place
-            them on the web page. We use another for loop, along with an if else statement
-            to display a table with even numbers bolded.
+            This function takes an array of numbers as a parameter. 
+            It initializes an empty string called results to store the HTML content. 
+            It then uses a for loop to iterate through each number in the numbers array. 
+            Inside the loop, it checks if the current number is even by using the modulo operator %. 
+            If the number is even, it appends a table row with the class "evenNumber" and the current number inside a table cell to the results string. 
+            If the number is odd, it appends a table row with only the current number inside a table cell to the results string. 
+            After the loop, it retrieves the results element from the HTML document and sets its innerHTML to the results string, which displays the generated numbers in an HTML table format.
           </p>
         </div>
       </div>
